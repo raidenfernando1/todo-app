@@ -1,11 +1,16 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
-import { AstroDevToolbar } from "astro/runtime/client/dev-toolbar/toolbar.js";
+import vercel from "@astrojs/vercel/serverless";
 
-// https://astro.build/config
 export default defineConfig({
+  output: "server",
   integrations: [react()],
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   devToolbar: {
     enabled: false,
   },

@@ -1,9 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Content as Description, frontmatter } from "../content/Home.md";
+import TestLogin from "../component/TestComponent";
 ---
 
 <Layout>
+  <TestLogin client:visible />
   <main class="container">
     <div class="wrapper">
       <div class="description-wrapper">
@@ -11,6 +13,7 @@ import { Content as Description, frontmatter } from "../content/Home.md";
         <Description />
       </div>
       <div class="CTA">
+        <a href="api/auth/login/google">Login with Google</a>
         <button>Login</button>
         <button>Signup</button>
       </div>
