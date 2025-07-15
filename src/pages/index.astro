@@ -1,8 +1,69 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { Content as Description, frontmatter } from "../content/Home.md";
 ---
 
-<Layout />
+<Layout>
+  <main class="container">
+    <div class="wrapper">
+      <div class="description-wrapper">
+        <h1 class="header-title">{frontmatter.title}</h1>
+        <Description />
+      </div>
+      <div class="CTA">
+        <button>Login</button>
+        <button>Signup</button>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style scoped>
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .wrapper {
+    padding-inline: var(--padding-inline);
+  }
+
+  .description-wrapper {
+    width: 55%;
+  }
+
+  .header-title {
+    font-weight: 900;
+    font-size: 4.5rem;
+  }
+
+  .CTA {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+
+    > button {
+      width: 13%;
+      padding: var(--button-padding);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header-title {
+      font-size: 3.5rem;
+      line-height: 1;
+    }
+
+    .description-wrapper {
+      width: 100%;
+      text-align: justify;
+    }
+
+    .CTA {
+      > button {
+        width: 100%;
+      }
+    }
+  }
+</style>

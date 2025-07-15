@@ -1,5 +1,7 @@
 # misc
 DEVPLAN.md
+DEVLOG.MD
+.vscode
 
 # build output
 dist/
