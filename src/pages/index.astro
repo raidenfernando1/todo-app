@@ -1,22 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Content as Description, frontmatter } from "../content/Home.md";
-import TestLogin from "../component/TestComponent";
+import HomeBtns from "../component/HomeCTA";
 ---
 
 <Layout>
-  <TestLogin client:visible />
   <main class="container">
     <div class="wrapper">
       <div class="description-wrapper">
         <h1 class="header-title">{frontmatter.title}</h1>
         <Description />
       </div>
-      <div class="CTA">
-        <a href="api/auth/login/google">Login with Google</a>
-        <button>Login</button>
-        <button>Signup</button>
-      </div>
+      <HomeBtns client:load />
     </div>
   </main>
 </Layout>
@@ -33,23 +28,12 @@ import TestLogin from "../component/TestComponent";
   }
 
   .description-wrapper {
-    width: 55%;
+    width: 55%;1
   }
 
   .header-title {
     font-weight: 900;
     font-size: 4.5rem;
-  }
-
-  .CTA {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-
-    > button {
-      width: 13%;
-      padding: var(--button-padding);
-    }
   }
 
   @media (max-width: 768px) {
@@ -61,12 +45,6 @@ import TestLogin from "../component/TestComponent";
     .description-wrapper {
       width: 100%;
       text-align: justify;
-    }
-
-    .CTA {
-      > button {
-        width: 100%;
-      }
     }
   }
 </style>

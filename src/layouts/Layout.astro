@@ -1,3 +1,7 @@
+---
+import "./../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,27 +25,3 @@
     <slot />
   </body>
 </html>
-
-<style is:global>
-  :root {
-    --padding-inline: 8vw;
-    --button-padding: 10px 25px;
-  }
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    font-family: "Tik Tok Sans", sans-serif;
-    font-weight: normal;
-    font-style: normal;
-  }
-  * {
-    margin: 0;
-    padding: 0;
-
-    > button {
-      cursor: pointer;
-    }
-  }
-</style>
