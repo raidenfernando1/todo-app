@@ -1,5 +1,8 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Main from "../app";
 ---
 
-<h1>this is supposed to be protected!</h1>
+<Layout>
+  <Main client:only />
+</Layout>

@@ -13,14 +13,17 @@
     "@astrojs/react": "^4.3.0",
     "@astrojs/vercel": "^8.2.2",
     "@better-auth/cli": "^1.2.12",
+    "@neondatabase/serverless": "^1.0.1",
     "@tailwindcss/vite": "^4.1.11",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "astro": "^5.11.0",
     "better-auth": "^1.2.12",
+    "lucide-react": "^0.525.0",
     "pg": "^8.16.3",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-masonry-css": "^1.0.16"
   },
   "devDependencies": {
     "@types/pg": "^8.15.4",

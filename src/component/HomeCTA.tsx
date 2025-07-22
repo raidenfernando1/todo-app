@@ -47,7 +47,7 @@ export default function HomeBtns() {
         (session ? (
           <>
             <button
-              onClick={() => (window.location.href = "/")}
+              onClick={() => (window.location.href = "/app")}
               className="w-[13%] py-[10px] px-[25px] border text-left"
             >
               Goto app
