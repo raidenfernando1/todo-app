@@ -12,7 +12,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   context.locals.session = session?.session || null;
 
   if (!session && pathname.startsWith("/app")) {
-    return context.redirect("/login");
+    return context.redirect("/404");
   }
 
   return next();

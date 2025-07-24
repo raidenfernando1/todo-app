@@ -3,7 +3,7 @@ import { Pool } from "pg";
 
 export const auth = betterAuth({
   database: new Pool({
-    connectionString: import.meta.env.DATABASE_SECRET_PSWD,
+    connectionString: import.meta.env.NEON_DATABASE_URL,
   }),
   socialProviders: {
     google: {
