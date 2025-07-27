@@ -1,57 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import CreateNote from "../../app/Create";
 ---
 
 <Layout>
-  <div class="container">
-    <a href="/app">Back</a>
-    <form class="wrapper">
-      <label class="title">
-        Create a title
-        <input />
-      </label>
-      <div>
-        <button>Submit</button>
-        <button type="reset">Reset</button>
-      </div>
-    </form>
-  </div>
+  <CreateNote client:load />
 </Layout>
-
-<style scoped>
-  .container {
-    height: 100%;
-    width: 100%;
-    padding: 1.5rem;
-  }
-
-  .wrapper {
-    width: 400px;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.75rem;
-  }
-
-  .title {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .title > input {
-    border: 1px solid black;
-    padding: 0.75rem;
-  }
-
-  button {
-    padding: 5px 10px;
-    border: 1px solid black;
-  }
-
-  a {
-    padding: 5px 10px;
-    border: 1px solid black;
-  }
-</style>

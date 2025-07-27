@@ -53,7 +53,10 @@ const EditorBar = ({ fontSize, setFontSize }: EditorBarProps) => {
           className="w-full sm:w-64 md:w-96 max-w-[80vw]"
         />
       </div>
-      <button className="border rounded p-1">
+      <button
+        onClick={() => (window.location.href = "/app")}
+        className="border rounded p-1"
+      >
         <X />
       </button>
     </div>

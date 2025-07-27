@@ -11,5 +11,7 @@ export const auth = betterAuth({
       clientSecret: import.meta.env.GOOGLE_OAUTH_SECRET,
     },
   },
-  baseUrl: import.meta.env.PROD ? "https://todoapp1235.vercel.app" : undefined,
+  baseUrl: import.meta.env.PROD
+    ? "https://todoapp1235.vercel.app"
+    : "http://localhost:4321",
 });
