@@ -1,6 +1,7 @@
 type CardTypes = {
   title: string;
   content: string;
+  id: string;
 };
 
 const CTAList = [
@@ -26,9 +27,12 @@ const CardCTA = () => {
   );
 };
 
-export const Card = ({ title, content }: CardTypes) => {
+export const Card = ({ title, content, id }: CardTypes) => {
   return (
-    <div className="border-1 p-3">
+    <div
+      onClick={() => (window.location.href = `notes/${id}`)}
+      className="border-1 p-3 w-full text-left cursor-pointer"
+    >
       <h1 className="mb-3 text-2xl font-semibold">{title}</h1>
       <p>{content}</p>
       <CardCTA />
