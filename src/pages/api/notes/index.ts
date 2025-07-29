@@ -38,8 +38,6 @@ export const POST: APIRoute = async ({ request }) => {
     headers: request.headers,
   });
 
-  console.log("test");
-
   if (!session) {
     return new Response(JSON.stringify({ error: "Unauthorized" }), {
       status: 401,
@@ -164,4 +162,47 @@ export const DELETE: APIRoute = async ({ request, url }) => {
       }
     );
   }
+};
+
+export const PUT: APIRoute = async ({ request, url }) => {
+  const session = await auth.api.getSession({
+    headers: request.headers,
+  });
+
+  if (!session) {
+    return new Response(JSON.stringify({ error: "Unauthorized" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  const noteId = url.searchParams.get("id");
+
+  if (!noteId) {
+    return new Response(JSON.stringify({ error: "Note ID is required" }), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  const { newContent } = await request.json();
+
+  const result = await db`
+    SELECT update_todo(${noteId}::uuid, ${session.user.id}::text, ${newContent}::text) as updated
+  `;
+
+  if (!result[0]?.updated) {
+    return new Response(JSON.stringify({ error: "Note not updated" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  return new Response(
+    JSON.stringify({ success: true, message: "Note updated successfully" }),
+    {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 };

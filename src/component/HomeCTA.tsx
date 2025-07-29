@@ -42,19 +42,19 @@ export default function HomeBtns() {
   };
 
   return (
-    <div className="mt-4 flex gap-[10px]">
+    <div className="mt-4 flex flex-col sm:flex-row gap-[10px]">
       {!loading &&
         (session ? (
           <>
             <button
               onClick={() => (window.location.href = "/app")}
-              className="w-[13%] py-[10px] px-[25px] border text-left"
+              className="w-[100%] sm:w-[13%] py-[10px] px-[25px] border text-left"
             >
               Goto app
             </button>
             <button
               onClick={logout}
-              className="w-[13%] py-[10px] px-[25px] border text-left"
+              className="w-[100%] sm:w-[13%] py-[10px] px-[25px] border text-left"
             >
               Logout
             </button>

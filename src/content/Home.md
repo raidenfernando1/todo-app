@@ -2,4 +2,4 @@
 title: "TODO APP"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae suscipit tellus mauris a diam maecenas sed enim ut. Et tortor at risus viverra adipiscing at in tellus.
+I built this app primarily for personal use, as I struggled to find a straightforward to-do list application with a built-in rich text editor. It’s developed using Astro with SSR and React, featuring full authentication and an integrated text editor—simple, efficient, and completely free.

@@ -4,7 +4,7 @@ type CardTypes = {
   title: string;
   content: string;
   id: string;
-  onDelete?: (id: string) => void; // Optional callback for parent to handle deletion
+  onDelete?: (id: string) => void;
 };
 
 const Card = ({ title, content, id, onDelete }: CardTypes) => {
@@ -17,7 +17,7 @@ const Card = ({ title, content, id, onDelete }: CardTypes) => {
     if (!el) return;
 
     el.style.height = "auto";
-    el.style.height = `${Math.min(el.scrollHeight, 240)}px`; // 15rem = 240px
+    el.style.height = `${Math.min(el.scrollHeight, 240)}px`; // 15rem = 240px :]
   }, [content]);
 
   const handleDelete = async () => {
@@ -31,11 +31,9 @@ const Card = ({ title, content, id, onDelete }: CardTypes) => {
       const data = await response.json();
 
       if (response.ok) {
-        // Call the parent callback if provided
         if (onDelete) {
           onDelete(id);
         } else {
-          // Refresh the page if no callback
           window.location.reload();
         }
       } else {
@@ -50,7 +48,6 @@ const Card = ({ title, content, id, onDelete }: CardTypes) => {
   };
 
   const handleCardClick = (e: React.MouseEvent) => {
-    // Don't navigate if clicking on buttons
     if ((e.target as HTMLElement).closest("button")) {
       return;
     }

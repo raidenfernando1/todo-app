@@ -1,5 +1,6 @@
 import React from "react";
 import { X } from "lucide-react";
+import { Save } from "lucide-react";
 
 interface EditorProps {
   note: {
@@ -9,16 +10,39 @@ interface EditorProps {
   };
 }
 
-export const Editor = ({ note }: EditorProps) => {
+const Editor = ({ note }: EditorProps) => {
   const [fontSize, setFontSize] = React.useState(1);
   const [title, setTitle] = React.useState(note.title);
   const [textContent, setTextContent] = React.useState(note.content);
+
+  const handleSave = async () => {
+    const response = await fetch(`/api/notes?id=${note.id}`, {
+      credentials: "include",
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ newContent: textContent }),
+    });
+
+    if (!response.ok) {
+      console.error("Failed to save note");
+    } else {
+      console.log("Note saved");
+    }
+
+    return response;
+  };
 
   return (
     <div className="w-full h-full flex flex-col pl-3 pr-3 pb-3">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl py-3 mr-8">{title}</h1>
-        <EditorBar fontSize={fontSize} setFontSize={setFontSize} />
+        <EditorBar
+          fontSize={fontSize}
+          setFontSize={setFontSize}
+          onSave={handleSave}
+        />
       </div>
       <textarea
         style={{ fontSize: `${fontSize}rem` }}
@@ -33,9 +57,10 @@ export const Editor = ({ note }: EditorProps) => {
 type EditorBarProps = {
   fontSize: number;
   setFontSize: React.Dispatch<React.SetStateAction<number>>;
+  onSave: () => void;
 };
 
-const EditorBar = ({ fontSize, setFontSize }: EditorBarProps) => {
+const EditorBar = ({ fontSize, setFontSize, onSave }: EditorBarProps) => {
   return (
     <div className="flex items-center gap-3 py-2">
       <div className="flex gap-4 items-center">
@@ -54,11 +79,21 @@ const EditorBar = ({ fontSize, setFontSize }: EditorBarProps) => {
         />
       </div>
       <button
+        onClick={onSave}
+        className="border rounded p-1 bg-green-50 hover:bg-green-100"
+        title="Save"
+      >
+        <Save />
+      </button>
+      <button
         onClick={() => (window.location.href = "/app")}
         className="border rounded p-1"
+        title="Close"
       >
         <X />
       </button>
     </div>
   );
 };
+
+export default Editor;

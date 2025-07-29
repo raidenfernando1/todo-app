@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import Notes from "./component/Notes";
 import Navbar from "./component/Navbar";
 import { Card } from "./component/Card";
@@ -11,12 +11,11 @@ type Note = {
 };
 
 export default function Main() {
-  const [notes, setNotes] = useState<Note[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [notes, setNotes] = React.useState<Note[]>([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState<string | null>(null);
 
-  // mount user notes
-  useEffect(() => {
+  React.useEffect(() => {
     (async () => {
       try {
         setLoading(true);
