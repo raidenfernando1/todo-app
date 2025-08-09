@@ -1,6 +1,6 @@
 <img width="1439" height="780" alt="Todoapp 1" src="https://github.com/user-attachments/assets/e201433a-1f10-4190-8dca-5927dc888077" />
 
-This is a personal Todo application built with Astro (SSR) and React, powered by TypeScript, BetterAuth for authentication, and NeonDB for storage. I created it mainly for myself to manage tasks but also as a way to explore and learn Astro’s server-side rendering capabilities in a real project.
+This is a personal Todo application built with Astro (SSR) and React, TypeScript, BetterAuth for authentication, and NeonDB for storage. I created it mainly for myself to manage tasks but also as a way to explore and learn Astro’s server-side rendering capabilities in a real project.
 
 <img width="1439" height="778" alt="todoapp 2" src="https://github.com/user-attachments/assets/76a2080b-b9a9-4752-9e58-5d15da2de179" />
 
