@@ -1,52 +1,9 @@
-# Astro Starter Kit: Basics
+<img width="1439" height="780" alt="Todoapp 1" src="https://github.com/user-attachments/assets/e201433a-1f10-4190-8dca-5927dc888077" />
 
-```sh
-npm create astro@latest -- --template basics
-```
+This is a personal Todo application built with Astro (SSR) and React, powered by TypeScript, BetterAuth for authentication, and NeonDB for storage. I created it mainly for myself to manage tasks but also as a way to explore and learn Astro’s server-side rendering capabilities in a real project.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+<img width="1439" height="778" alt="todoapp 2" src="https://github.com/user-attachments/assets/76a2080b-b9a9-4752-9e58-5d15da2de179" />
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The app features a rich text editor for each task, allowing more detailed notes, formatting, and organization compared to plain-text todo lists. This makes it useful not just for simple tasks, but also for keeping context, ideas, and extra details directly alongside your todos.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+<img width="1416" height="773" alt="todo app 3" src="https://github.com/user-attachments/assets/ac5ae639-32b5-488d-9422-99cc75650b3e" />
