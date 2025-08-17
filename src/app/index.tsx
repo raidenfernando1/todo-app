@@ -2,6 +2,7 @@ import React from "react";
 import Notes from "./component/Notes";
 import Navbar from "./component/Navbar";
 import { Card } from "./component/Card";
+import Loading from "../component/LoadingScreen";
 
 type Note = {
   id: string;
@@ -36,22 +37,23 @@ export default function Main() {
     })();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <main>
-      <Navbar />
-      <Notes>
-        {notes.map((note) => (
-          <Card
-            key={note.id}
-            title={note.title}
-            content={note.content}
-            id={note.id}
-          />
-        ))}
-      </Notes>
-    </main>
+    <Loading isLoading={loading}>
+      <main>
+        <Navbar />
+        <Notes>
+          {notes.map((note) => (
+            <Card
+              key={note.id}
+              title={note.title}
+              content={note.content}
+              id={note.id}
+            />
+          ))}
+        </Notes>
+      </main>
+    </Loading>
   );
 }
