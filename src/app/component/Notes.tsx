@@ -1,5 +1,4 @@
 import Masonry from "react-masonry-css";
-import { Card } from "./Card";
 import type React from "react";
 
 const breakpointColumns = {
