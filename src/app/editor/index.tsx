@@ -1,6 +1,5 @@
 import React from "react";
-import { X } from "lucide-react";
-import { Save } from "lucide-react";
+import { X, Save } from "lucide-react";
 
 interface EditorProps {
   note: {
@@ -43,6 +42,7 @@ const Editor = ({ note }: EditorProps) => {
           setFontSize={setFontSize}
           onSave={handleSave}
         />
+        s{" "}
       </div>
       <textarea
         style={{ fontSize: `${fontSize}rem` }}
